@@ -1,9 +1,21 @@
 <template>
-  <div id="app">
-    <router-view/>
+  <div id="app" class="warpper">
+    <keep-alive exclude="Detail">
+      <router-view></router-view>
+    </keep-alive>
+    <main-tab-bar></main-tab-bar>
   </div>
 </template>
 
+<script>
+  import mainTabBar from "components/content/mainTabbar/mainTabBar"
+  export default {
+    name: "app",
+    components:{
+      mainTabBar
+    }
+  }
+</script>
 <style>
 @import "assets/css/base.css";
 </style>
